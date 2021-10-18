@@ -13,10 +13,10 @@ namespace SchoolMIS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class SchoolMIS_DBEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public SchoolMIS_DBEntities()
+            : base("name=SchoolMIS_DBEntities")
         {
         }
     

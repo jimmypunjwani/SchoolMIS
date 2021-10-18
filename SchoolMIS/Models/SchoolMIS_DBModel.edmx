@@ -192,7 +192,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SchoolMIS_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Courses" EntityType="Self.Course" />
           <EntitySet Name="Enrollments" EntityType="Self.Enrollment" />
           <EntitySet Name="Lecturers" EntityType="Self.Lecturer" />
@@ -215,7 +215,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolMIS_DBModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="SchoolMIS_DBModelStoreContainer" CdmEntityContainer="SchoolMIS_DBEntities">
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="SchoolMIS_DBModel.Course">
               <MappingFragment StoreEntitySet="Course">
