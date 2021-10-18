@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SchoolMIS.Models
@@ -48,10 +49,10 @@ namespace SchoolMIS.Models
 
     public class LoginViewModel
     {
+        //Updated Email to UserName and remove the [EmailAddress] validation
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -79,6 +80,17 @@ namespace SchoolMIS.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //Adding validations for UserName:
+        [Required]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        //Adding New Custom Field BirthDate:
+        [Required]
+        [Display(Name = "Date of Birth")]
+        public DateTime BirthDate { get; set; }
+
     }
 
     public class ResetPasswordViewModel
