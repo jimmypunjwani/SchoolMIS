@@ -91,6 +91,11 @@ namespace SchoolMIS.Models
         [Display(Name = "Date of Birth")]
         public DateTime BirthDate { get; set; }
 
+        //Adding New Custom Field User Role:
+        [Required]
+        [Display(Name = "User Role")]
+        public string UserRole { get; set; }
+
     }
 
     public class ResetPasswordViewModel
