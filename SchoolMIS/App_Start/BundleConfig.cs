@@ -31,6 +31,11 @@ namespace SchoolMIS
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/themes/base/autocomplete.css"));
+
+            //Adding jquery-ui Styles Bundle:
+            bundles.Add(new StyleBundle("~/Contents/jqueryui").Include(
+                        "~/Content/themes/base/all.css",
+                        "~/Content/themes/base/autocomplete.css"));
         }
     }
 }
