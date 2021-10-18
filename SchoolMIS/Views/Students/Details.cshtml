@@ -52,6 +52,36 @@
         </dd>
 
     </dl>
+
+    <!--Adding table to view details of enrolled courses:-->
+    <table class="table table-condensed table-responsive">
+        <tr>
+            <th>Course Title</th>
+            <th>Credits</th>
+            <th>Grade</th>
+        </tr>
+        @foreach (var enrollment in Model.Enrollments)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @enrollment.Course.Title
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        @enrollment.Course.Credits
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        @enrollment.Grade
+                    </p>
+                </td>
+            </tr>
+        }
+    </table>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |

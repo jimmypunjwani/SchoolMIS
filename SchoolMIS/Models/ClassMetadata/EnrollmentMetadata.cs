@@ -24,7 +24,7 @@ namespace SchoolMIS.Models
         public Student Student { get; set; }
         
         [Display(Name = "Lecturer")]
-        public Nullable<int> LecturerId { get; set; }
+        public Nullable<int> LecturerID { get; set; }
         
         [Display(Name = "Lecturer")]
         public Lecturer Lecturer { get; set; }

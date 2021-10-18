@@ -11,6 +11,7 @@ using SchoolMIS.Models;
 
 namespace SchoolMIS.Controllers
 {
+    [Authorize(Roles = "Admin, Teacher")]
     public class EnrollmentsController : Controller
     {
         private SchoolMIS_DBEntities db = new SchoolMIS_DBEntities();

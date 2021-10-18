@@ -11,11 +11,13 @@ using SchoolMIS.Models;
 
 namespace SchoolMIS.Controllers
 {
+    [Authorize(Roles = "Supervisor,Admin")]
     public class CoursesController : Controller
     {
         private SchoolMIS_DBEntities db = new SchoolMIS_DBEntities();
 
         // GET: Courses
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
             return View(await db.Courses.ToListAsync());

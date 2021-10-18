@@ -11,11 +11,13 @@ using SchoolMIS.Models;
 
 namespace SchoolMIS.Controllers
 {
+    [Authorize(Roles = "Admin, Teacher, Student")]
     public class StudentsController : Controller
     {
         private SchoolMIS_DBEntities db = new SchoolMIS_DBEntities();
 
         // GET: Students
+        [AllowAnonymous]
         public async Task<ActionResult> Index()
         {
             return View(await db.Students.ToListAsync());
@@ -91,6 +93,7 @@ namespace SchoolMIS.Controllers
         }
 
         // GET: Students/Delete/5
+        [Authorize(Roles = "Teacher")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -106,6 +109,7 @@ namespace SchoolMIS.Controllers
         }
 
         // POST: Students/Delete/5
+        [Authorize(Roles = "Teacher")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
